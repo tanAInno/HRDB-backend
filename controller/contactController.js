@@ -54,10 +54,10 @@ exports.view = function (req, res) {
 };
 // Handle update contact info
 exports.update = function (req, res) {
-Contact.findById(req.params.contact_id, function (err, contact) {
+    Contact.findById(req.params.contact_id, function (err, contact) {
         if (err)
             res.send(err);
-contact.name = req.body.name ? req.body.name : contact.name;
+        contact.name = req.body.name;
         contact.employee_id = req.body.employee_id;
         contact.image = req.body.image;
         contact.position = req.body.position;

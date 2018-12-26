@@ -9,7 +9,9 @@ router.get('/', function (req, res) {
 });
 // Import contact controller
 var contactController = require('./controller/contactController');
+var assetController = require('./controller/assetController');
 var loginController = require('./controller/loginController');
+var activityController = require('./controller/activityController');
 // Contact routes
 router.route('/contacts')
     .get(contactController.index)
@@ -23,5 +25,18 @@ router.route('/contacts/reset/all')
     .delete(contactController.deleteAll);
 router.route('/login')
     .post(loginController.login);
+router.route('/assets')
+    .get(assetController.index)
+    .post(assetController.new);
+router.route('/assets/:asset_id')
+    .get(assetController.view)
+    .patch(assetController.update)
+    .put(assetController.update)
+    .delete(assetController.delete);
+router.route('/activities')
+    .get(activityController.index)
+    .post(activityController.new);
+router.route('/activities/:activity_id')
+    .delete(activityController.delete)
 // Export API routes
 module.exports = router;

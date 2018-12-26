@@ -1,20 +1,12 @@
 var mongoose = require('mongoose');
 // Setup schema
-var contactSchema = mongoose.Schema({
+var assetSchema = mongoose.Schema({
     name: {
         type: String,
-        default: ''
-    },
-    image: String,
-    employee_id: {
-        type: String,
+        default: '',
         required: true
     },
-    position: { 
-        type: String,
-        default: ''
-    },
-    department: { 
+    os: { 
         type: String,
         default: ''
     },
@@ -22,37 +14,57 @@ var contactSchema = mongoose.Schema({
         type: String,
         default: ''
     },
-    phone: { 
+    loaner: { 
         type: String,
         default: ''
     },
-    email: { 
+    brand: { 
         type: String,
         default: ''
     },
-    last_edited: { 
+    ram: { 
         type: String,
         default: ''
     },
-    assets: { 
+    harddisk: { 
         type: String,
         default: ''
     },
-    wifi_password: { 
+    serial: {
         type: String,
         default: ''
     },
-    printer_password: { 
+    processor: {
         type: String,
         default: ''
     },
-    create_date: {
-        type: Date,
-        default: Date.now
+    mac_wifi: {
+        type: String,
+        default: ''
+    },
+    mac_lan: {
+        type: String,
+        default: ''
+    },
+    warranty: {
+        type: String,
+        default: ''
+    },
+    service_tag: {
+        type: String,
+        default: ''
+    },
+    email: {
+        type: String,
+        default: ''
+    },
+    programs: { 
+        type: String,
+        default: ''
     }
 });
-// Export Contact model
-var Contact = module.exports = mongoose.model('contact', contactSchema);
+// Export asset model
+var asset = module.exports = mongoose.model('asset', assetSchema);
 module.exports.get = function (callback, limit) {
-    Contact.find(callback).limit(limit);
+    Asset.find(callback).limit(limit);
 }
