@@ -3,8 +3,7 @@ var mongoose = require('mongoose');
 var assetSchema = mongoose.Schema({
     name: {
         type: String,
-        default: '',
-        required: true
+        default: ''
     },
     os: { 
         type: String,
@@ -58,9 +57,13 @@ var assetSchema = mongoose.Schema({
         type: String,
         default: ''
     },
-    programs: { 
+    department: {
         type: String,
         default: ''
+    },
+    programs: { 
+        type: Array,
+        default: []
     }
 });
 // Export asset model
