@@ -26,8 +26,8 @@ var assetSchema = mongoose.Schema({
         default: ''
     },
     harddisk: { 
-        type: String,
-        default: ''
+        type: Array,
+        default: []
     },
     serial: {
         type: String,
